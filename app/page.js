@@ -1,7 +1,12 @@
+import Header from "@/components/Header";
+
 export default function Home() {
   return (
-    <main className="p-10">
-      <h1 className="text-3xl font-bold">Setup Done ✅</h1>
-    </main>
+    <>
+      <Header />
+      <main className="p-10">
+        <h1>Home Page</h1>
+      </main>
+    </>
   );
 }
