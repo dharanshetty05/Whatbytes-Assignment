@@ -1,5 +1,7 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ProductCard from "@/components/ProductCard";
+import { products } from "@/data/product";
 
 export default function Home() {
   return (
@@ -56,19 +58,18 @@ export default function Home() {
                 Product Listing
               </h2>
 
-              <div className="grid grid-cols-3 gap-6">
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {products.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
               </div>
             </div>
           </section>
 
         </div>
       </main>
+
+      <Footer />
     </>
   );
 }
