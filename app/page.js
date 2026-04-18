@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import ProductCard from "@/components/ProductCard";
 
 export default function Home() {
   return (
@@ -14,20 +15,35 @@ export default function Home() {
             <div>
               <h2 className="text-lg font-semibold mb-4">Filters</h2>
 
-              <div className="space-y-4">
-                <div>
-                  <p className="font-medium mb-2">Category</p>
-                  <div className="space-y-1 text-sm">
-                    <p>All</p>
-                    <p>Electronics</p>
-                    <p>Clothing</p>
-                    <p>Home</p>
-                  </div>
+              {/* Categories */}
+              <div className="mb-6">
+                <p className="font-medium mb-2">Category</p>
+                <div className="space-y-2 text-sm">
+                  <label className="flex items-center gap-2">
+                    <input type="radio" name="category" defaultChecked />
+                    All
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input type="radio" name="category" defaultChecked />
+                    Electronics
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input type="radio" name="category" defaultChecked />
+                    Clothing
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input type="radio" name="category" defaultChecked />
+                    Home
+                  </label>
                 </div>
+              </div>
 
-                <div>
-                  <p className="font-medium mb-2">Price</p>
-                  <div className="h-2 bg-gray-300 rounded"></div>
+              <div>
+                <p className="font-medium mb-2">Price</p>
+                <input type="range" className="w-full"/>
+                <div className="flex justify-between text-xs mt-1">
+                  <span>0</span>
+                  <span>1000</span>
                 </div>
               </div>
             </div>
@@ -41,9 +57,12 @@ export default function Home() {
               </h2>
 
               <div className="grid grid-cols-3 gap-6">
-                <div className="bg-gray-100 h-40 rounded"></div>
-                <div className="bg-gray-100 h-40 rounded"></div>
-                <div className="bg-gray-100 h-40 rounded"></div>
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
               </div>
             </div>
           </section>
